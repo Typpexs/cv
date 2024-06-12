@@ -1,5 +1,4 @@
 import streamlit as st
-from PIL import Image
 
 from src.constants import (
     ADO_LOGO, BASH_LOGO, FASTAPI_LOGO, FORMATEUR_LOGO, HELM_LOGO, JUPYTER_LOGO,
@@ -9,6 +8,7 @@ from src.constants import (
 from src.css import CUSTOM_COLUMN_4, CUSTOM_COLUMN_5, HIDE_IMG_FS
 from src.image_data import ImageData
 from src.experiences import experiences
+from src.certifications import certifications
 
 st.set_page_config(
     page_title="Accueil",
@@ -29,6 +29,7 @@ st.markdown(
     **👈 Selectionner mes experiences dans le menu** pour voir mon expertise !
     """
 )
+st.divider()
 
 def display_images_with_captions(image_data: list[ImageData]) -> None:
     """Display images with captions in Streamlit columns.
@@ -40,7 +41,6 @@ def display_images_with_captions(image_data: list[ImageData]) -> None:
         data.column.image(data.image, caption=data.caption, **(data.kwargs or {}))
         data.column.markdown(data.custom_column, unsafe_allow_html=True)
 
-st.subheader("\n")
 st.header("Compétences clés :")
 
 columns_1 = st.columns(4)
@@ -85,7 +85,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.subheader("\n")
 
 # Adjust the description to include HTML indentation
 def format_description(description: str) -> str:
@@ -93,14 +92,36 @@ def format_description(description: str) -> str:
     formatted_lines = [f"&nbsp;"*12 + line.strip() for line in lines]
     return "<br>".join(formatted_lines)
 
+st.divider()
 st.header("Expériences :")
+st.text("\n")
 
 for experience in experiences:
-    st.subheader(f"{experience.entreprise} - {experience.poste}")
+    st.header(f"{experience.poste}")
+    st.markdown(f"🏢 **{experience.entreprise}**")
     st.markdown(f"📅 {experience.date}")
     st.markdown("📝**Description :**")
     st.markdown(format_description(experience.description), unsafe_allow_html=True)
     st.markdown(f"🔧 {experience.competences}")
+    st.markdown("")
 
+st.divider()
+st.header("Formation :")
+st.text("\n")
+
+st.subheader("Master en informatique")
+st.markdown(
+    """
+    🏢 [Epitech](https://www.epitech.eu/) - Bordeaux, France  
+    📅 2019
+    """
+)
+
+st.divider()
+st.header("Certifications :")
+st.text("\n")
+
+for certification in certifications:
+    st.markdown(f"""[{certification.titre}]({certification.link}) - {certification.ecole} - {certification.date}""")
 
 st.markdown(HIDE_IMG_FS, unsafe_allow_html=True)
