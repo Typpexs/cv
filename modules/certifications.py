@@ -1,4 +1,4 @@
-from src.certification import Certification
+from modules.certification import Certification
 
 
 regression = Certification(

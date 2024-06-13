@@ -1,19 +1,23 @@
 import streamlit as st
 
-from src.constants import (
+from modules.constants import (
     ADO_LOGO, BASH_LOGO, FASTAPI_LOGO, FORMATEUR_LOGO, HELM_LOGO, JUPYTER_LOGO,
     LINUX_LOGO, MLFLOW_LOGO, PYTHON_LOGO, DOCKER_LOGO, KUBE_LOGO, AZUREML_LOGO,
     SNOWFLAKE_LOGO, STREAMLIT_LOGO
 )
-from src.css import CUSTOM_COLUMN_4, CUSTOM_COLUMN_5, HIDE_IMG_FS
-from src.image_data import ImageData
-from src.experiences import experiences
-from src.certifications import certifications
+from modules.css import CUSTOM_COLUMN_4, CUSTOM_COLUMN_5, HIDE_IMG_FS
+from modules.image_data import ImageData
+from modules.experiences import experiences
+from modules.certifications import certifications
+from modules.navbar import navbar
 
 st.set_page_config(
     page_title="Accueil",
     page_icon="🏠",
 )
+
+navbar()
+
 
 #TODO : Revoir le logo, par ma PP et faire un bon link dessus
 st.logo('./static/python_logo.png', link="https://streamlit.io/gallery", icon_image='./static/python_logo.png')

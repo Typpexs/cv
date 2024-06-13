@@ -1,4 +1,4 @@
-from src.image_processor import ImageProcessor
+from modules.image_processor import ImageProcessor
 
 
 python_logo_processor = ImageProcessor(image_path="./static/python_logo.png", right_pct=0.2, left_pct=0.2)

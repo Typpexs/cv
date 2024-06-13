@@ -1,4 +1,4 @@
-from src.experience import Experience
+from modules.experience import Experience
 import datetime as dt
 
 start_date = dt.date(2022, 2, 1) # PeakSys start date

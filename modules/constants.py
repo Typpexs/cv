@@ -1,4 +1,4 @@
-from src.images import (
+from modules.images import (
         python_logo_processor, docker_logo_processor, 
         kube_logo_processor, azureml_logo_processor, 
         ado_logo_processor, bash_logo_processor,

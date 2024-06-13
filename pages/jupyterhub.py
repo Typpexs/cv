@@ -1,6 +1,9 @@
 import streamlit as st
+from modules.navbar import navbar
 
 st.set_page_config(page_title="Plotting Demo", page_icon="📈")
+
+navbar()
 
 st.markdown("# Plotting Demo")
 st.sidebar.header("Plotting Demo")
