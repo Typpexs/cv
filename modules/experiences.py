@@ -1,5 +1,7 @@
-from modules.experience import Experience
 import datetime as dt
+import streamlit as st
+
+from modules.experience import Experience
 
 start_date = dt.date(2022, 2, 1) # PeakSys start date
 today = dt.date.today()
@@ -81,3 +83,29 @@ technicolor = Experience(
 )
 
 experiences = [peaksys, journee_de_chasse, thales, share_your_trip, office_toner, technicolor]
+
+def format_description(description: str) -> str:
+    """Adjust the description to include HTML indentation
+
+    Args:
+        description (str): description of the experience
+
+    Returns:
+        str: formatted description
+    """
+    lines = description.strip().split("\n")
+    formatted_lines = [f"&nbsp;"*12 + line.strip() for line in lines]
+    return "<br>".join(formatted_lines)
+
+def display_experiences() -> None:
+    st.header("Expériences :")
+    st.text("\n")
+
+    for experience in experiences:
+        st.header(f"{experience.poste}")
+        st.markdown(f"🏢 **{experience.entreprise}**")
+        st.markdown(f"📅 {experience.date}")
+        st.markdown("📝**Description :**")
+        st.markdown(format_description(experience.description), unsafe_allow_html=True)
+        st.markdown(f"🔧 {experience.competences}")
+        st.markdown("")

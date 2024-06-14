@@ -1,0 +1,103 @@
+home: 
+  home: Accueil
+  welcome: Bienvenue sur mon portfolio professionnel ! 👋
+  about: |
+      Je suis Martin Majo, **lead développeur**, **MLOps Engineer**.
+
+      Avec bientôt 6 ans d'expérience professionnelle dans le développement de logiciels, j'ai acquis des compétences en développement de logiciels, en gestion de projet et en intelligence artificielle.
+
+      **👈 Sélectionnez mes expériences dans le menu** pour découvrir mon expertise !
+
+  skills:
+    primary: "Compétences clés :"
+    other: "Autres compétences :"
+    bonus: |
+      <p style='font-size:12px'>
+      Cette liste n'est pas exhaustive et ne reflète que les domaines où j'ai le plus d'affinités et d'expertise.
+      </p>
+
+
+  experiences:
+    experience: "Expériences :"
+
+    - company: Peaksys (Cdiscount)
+      title: MLOps Engineer
+      date: Février 2022 - Aujourd'hui ({years} ans et {months} mois)
+      description: |
+        Industrialisation des processus de déploiement des modèles de machine Learning.  
+        Conception, architecture et développement de logiciel Python (librairies, modules).  
+        Conception et animations de formations auprès des Data Scientists.  
+        Débogage et assistance auprès des équipes DataScience.  
+        Automatisation des tests fonctionnels.  
+        Optimisation de code.  
+      skills: 
+        - Python 
+        - Docker
+        - Kubernetes
+        - Azure DevOps
+        - Datascience
+
+    - company: Journée de chasse
+      title: Project Lead Developer
+      date: Mars 2020 - Septembre 2021 (1 an et 6 mois)
+      description: |
+        Création et management d'une équipe (2 devs & 1 ui/ux). Création des nouvelles
+        features de la platform. Être en charge des serveurs, de l'optimization de la
+        platform et tous le coté IT de l'entreprise (factures, SEO, AWS, ...). 
+      skills: 
+        - Angular
+        - NodeJS
+        - AWS
+        - SEO
+        - IT
+        - Management
+        - Python
+        - Stripe
+
+    - company: Thales
+      title: Développeur logiciel
+      date: Août 2019 - Mars 2020 (8 mois)
+      description: |
+        Création d'une plateforme permettant de gérer plusieurs bancs
+        d'essais directement depuis son navigateur plutôt que de devoir rester dans la
+        salle des bancs.  
+        Création de rapport dynamiques sur tous les matériels de Thales France.
+      skills: 
+        - Python
+        - Birt
+        - React
+
+    - company: ShareYourTrip
+      title: Développeur full-stack
+      date: fevrier 2018 - mars 2019 (1 an et 1 mois)
+      description: |
+        Développeur Full Stack pour shareyourtrip.fr
+      skills: 
+        - Symfony
+        - Elasticsearch
+        - AWS
+        - Nginx
+        - Python
+
+    - company: Office Toner
+      title: Développeur Back End
+      date: avril 2017 - septembre 2017 (5 mois)
+      description: |
+        Optimisation et refactoring du site internet OfficeToner
+      skills: 
+        - Python
+        - MongoDB
+        - MySQL
+        - PHP
+
+    - company: Technicolor
+      title: Développeur logiciel
+      date: juillet 2015 - janvier 2016 (6 mois)
+      description: |
+        Création d'un logiciel permettant le tri automatique des rushes (vidéos produite
+        lors de tournage de films) du disque dur externe des clients au serveur interne qui
+        permet une optimisation du temps des monteurs et étalonneurs.
+      skills: 
+        - Python
+        - Qt
+        - MySQL

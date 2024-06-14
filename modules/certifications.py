@@ -1,3 +1,5 @@
+import streamlit as st
+
 from modules.certification import Certification
 
 
@@ -30,3 +32,12 @@ advanced_classification = Certification(
 )
 
 certifications = [regression, clustering, classification, advanced_classification]
+
+def display_certifications() -> None:
+    """Display certifications in Streamlit columns.
+    """
+    st.header("Certifications :")
+    st.text("\n")
+
+    for certification in certifications:
+        st.markdown(f"""[{certification.titre}]({certification.link}) - {certification.ecole} - {certification.date}""")
