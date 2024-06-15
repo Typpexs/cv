@@ -6,7 +6,7 @@ st.set_page_config(
 )
 
 from modules.init_page import default_init_page
-from modules.formations import display_formations
+from modules.educations import display_educations
 from modules.experiences import display_experiences
 from modules.certifications import display_certifications
 from modules.skills import display_skills
@@ -32,7 +32,7 @@ def main():
     display_experiences()
     st.divider()
 
-    display_formations()
+    display_educations()
     st.divider()
 
     display_certifications()

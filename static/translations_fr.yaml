@@ -17,87 +17,99 @@ home:
       </p>
 
 
-  experiences:
-    experience: "Expériences :"
+  professional_experience:
+    title: "Expériences professionnelles :"
+    description: "Description :"
 
-    - company: Peaksys (Cdiscount)
-      title: MLOps Engineer
-      date: Février 2022 - Aujourd'hui ({years} ans et {months} mois)
-      description: |
-        Industrialisation des processus de déploiement des modèles de machine Learning.  
-        Conception, architecture et développement de logiciel Python (librairies, modules).  
-        Conception et animations de formations auprès des Data Scientists.  
-        Débogage et assistance auprès des équipes DataScience.  
-        Automatisation des tests fonctionnels.  
-        Optimisation de code.  
-      skills: 
-        - Python 
-        - Docker
-        - Kubernetes
-        - Azure DevOps
-        - Datascience
+    experiences:
+      - company: Peaksys (Cdiscount)
+        title: MLOps Engineer
+        date: Février 2022 - Aujourd'hui ({years} ans et {months} mois)
+        description: |
+          Industrialisation des processus de déploiement des modèles de machine Learning.  
+          Conception, architecture et développement de logiciel Python (librairies, modules).  
+          Conception et animation de formations auprès des Data Scientists.  
+          Débogage et assistance auprès des équipes DataScience.  
+          Automatisation des tests fonctionnels.  
+          Optimisation de code.  
+        skills: 
+          - Python 
+          - Docker
+          - Kubernetes
+          - Azure DevOps
+          - Datascience
 
-    - company: Journée de chasse
-      title: Project Lead Developer
-      date: Mars 2020 - Septembre 2021 (1 an et 6 mois)
-      description: |
-        Création et management d'une équipe (2 devs & 1 ui/ux). Création des nouvelles
-        features de la platform. Être en charge des serveurs, de l'optimization de la
-        platform et tous le coté IT de l'entreprise (factures, SEO, AWS, ...). 
-      skills: 
-        - Angular
-        - NodeJS
-        - AWS
-        - SEO
-        - IT
-        - Management
-        - Python
-        - Stripe
+      - company: Journée de chasse
+        title: Project Lead Developer
+        date: Mars 2020 - Septembre 2021 (1 an et 6 mois)
+        description: |
+          Création et management d'une équipe (2 devs & 1 ui/ux). Création des nouvelles
+          fonctionnalités de la platform. Être en charge des serveurs, de l'optimisation 
+          de la plateforme et de tout le côté IT de l'entreprise (factures, SEO, AWS, ...).
+        skills: 
+          - Angular
+          - NodeJS
+          - AWS
+          - SEO
+          - IT
+          - Management
+          - Python
+          - Stripe
 
-    - company: Thales
-      title: Développeur logiciel
-      date: Août 2019 - Mars 2020 (8 mois)
-      description: |
-        Création d'une plateforme permettant de gérer plusieurs bancs
-        d'essais directement depuis son navigateur plutôt que de devoir rester dans la
-        salle des bancs.  
-        Création de rapport dynamiques sur tous les matériels de Thales France.
-      skills: 
-        - Python
-        - Birt
-        - React
+      - company: Thales
+        title: Développeur logiciel
+        date: Août 2019 - Mars 2020 (8 mois)
+        description: |
+          Création d'une plateforme permettant de gérer plusieurs bancs
+          d'essais directement depuis son navigateur plutôt que de devoir rester dans la
+          salle des bancs.  
+          Création de rapports dynamiques sur tous les matériels de Thales France.
+        skills: 
+          - Python
+          - Birt
+          - React
 
-    - company: ShareYourTrip
-      title: Développeur full-stack
-      date: fevrier 2018 - mars 2019 (1 an et 1 mois)
-      description: |
-        Développeur Full Stack pour shareyourtrip.fr
-      skills: 
-        - Symfony
-        - Elasticsearch
-        - AWS
-        - Nginx
-        - Python
+      - company: ShareYourTrip
+        title: Développeur Full Stack
+        date: fevrier 2018 - mars 2019 (1 an et 1 mois)
+        description: |
+          Développeur Full Stack pour shareyourtrip.fr
+        skills: 
+          - Symfony
+          - Elasticsearch
+          - AWS
+          - Nginx
+          - Python
 
-    - company: Office Toner
-      title: Développeur Back End
-      date: avril 2017 - septembre 2017 (5 mois)
-      description: |
-        Optimisation et refactoring du site internet OfficeToner
-      skills: 
-        - Python
-        - MongoDB
-        - MySQL
-        - PHP
+      - company: Office Toner
+        title: Développeur Back End
+        date: avril 2017 - septembre 2017 (5 mois)
+        description: |
+          Optimisation et refactoring du site internet OfficeToner
+        skills: 
+          - Python
+          - MongoDB
+          - MySQL
+          - PHP
 
-    - company: Technicolor
-      title: Développeur logiciel
-      date: juillet 2015 - janvier 2016 (6 mois)
-      description: |
-        Création d'un logiciel permettant le tri automatique des rushes (vidéos produite
-        lors de tournage de films) du disque dur externe des clients au serveur interne qui
-        permet une optimisation du temps des monteurs et étalonneurs.
-      skills: 
-        - Python
-        - Qt
-        - MySQL
+      - company: Technicolor
+        title: Développeur logiciel
+        date: juillet 2015 - janvier 2016 (6 mois)
+        description: |
+          Création d'un logiciel permettant le tri automatique des rushes (vidéos produites 
+          lors de tournages de films) du disque dur externe des clients au serveur interne 
+          qui permet une optimisation du temps des monteurs et étalonneurs.
+        skills: 
+          - Python
+          - Qt
+          - MySQL
+  
+  education:
+    title: "Formations :"
+
+    educations:
+      - school: Epitech
+        degree: Master en Informatique
+        location: Bordeaux, France
+        graduated_on: 2019
+        link: https://www.epitech.eu/

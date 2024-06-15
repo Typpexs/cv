@@ -26,7 +26,7 @@ class Translator:
         with open('./static/translations_en.yaml', 'r', encoding='utf-8') as file:
             self.translations['EN'] = yaml.safe_load(file)
 
-    def get_translation(self, key: str, **kwargs: Any) -> str:
+    def get_translation(self, key: str, **kwargs: Any) -> str | dict:
         """
         Get the translation for the given key based on the current language.
         
@@ -37,13 +37,15 @@ class Translator:
             **kwargs: Arguments to format the string.
 
         Returns:
-            str: The translated string.
+            str | dict : The translated string or dict.
         """
         lang = st.session_state.get("lang", "FR")
         keys = key.split('.')
         translation: dict = self.translations.get(lang, {})
         for k in keys:
-            translation = translation.get(k, {})
+            translation = translation.get(k, None)
+            if translation is None:
+                return key 
         if isinstance(translation, str):
             return translation.format(**kwargs)
-        return key
+        return translation

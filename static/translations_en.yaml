@@ -16,21 +16,98 @@ home:
       This list is not exhaustive and only reflects the areas where I have the most affinities and expertise.
       </p>
 
-  experiences:
-    experience: "Expessssssriences :"
-    - company: Google
-      title: Software Engineer
-      date: 2019 - 2020
-      description: Worked on the Google Search team to improve search results.
-      skills: 
-        - Python
-        - C++
-        - JavaScript
-    - company: Facebook
-      title: Product Manager
-      date: 2018 - 2019
-      description: Managed the development of new products.
-      skills: 
-        - Product Management
-        - Communication
-        - Leadership
+  professional_experience:
+    title: "Professional Experience:"
+    description: "Description :"
+
+    experiences:
+      - company: Peaksys (Cdiscount)
+        title: MLOps Engineer
+        date: February 2022 - Present ({years} years and {months} months)
+        description: |
+          Industrialization of the deployment processes for machine learning models.  
+          Design, architecture, and development of Python software (libraries, modules).  
+          Design and delivery of training sessions for Data Scientists.  
+          Debugging and support for Data Science teams.  
+          Automation of functional tests.  
+          Code optimization.  
+        skills: 
+          - Python 
+          - Docker
+          - Kubernetes
+          - Azure DevOps
+          - Data Science
+
+      - company: Journée de chasse
+        title: Project Lead Developer
+        date: March 2020 - September 2021 (1 year and 6 months)
+        description: |
+          Creation and management of a team (2 developers & 1 UI/UX). Creation of new
+          features for the platform. Responsible for servers, platform optimization, and all
+          IT aspects of the company (invoices, SEO, AWS, ...). 
+        skills: 
+          - Angular
+          - NodeJS
+          - AWS
+          - SEO
+          - IT
+          - Management
+          - Python
+          - Stripe
+
+      - company: Thales
+        title: Software Developer
+        date: August 2019 - March 2020 (8 months)
+        description: |
+          Creation of a platform to manage multiple test benches directly from a browser
+          instead of having to stay in the test room.  
+          Creation of dynamic reports on all Thales France equipment.
+        skills: 
+          - Python
+          - Birt
+          - React
+
+      - company: ShareYourTrip
+        title: Full-Stack Developer
+        date: February 2018 - March 2019 (1 year and 1 month)
+        description: |
+          Full Stack Developer for shareyourtrip.fr
+        skills: 
+          - Symfony
+          - Elasticsearch
+          - AWS
+          - Nginx
+          - Python
+
+      - company: Office Toner
+        title: Back End Developer
+        date: April 2017 - September 2017 (5 months)
+        description: |
+          Optimization and refactoring of the OfficeToner website
+        skills: 
+          - Python
+          - MongoDB
+          - MySQL
+          - PHP
+
+      - company: Technicolor
+        title: Software Developer
+        date: July 2015 - January 2016 (6 months)
+        description: |
+          Creation of software for automatic sorting of rushes (videos produced during
+          film shoots) from clients' external hard drives to the internal server, optimizing
+          the time for editors and colorists.
+        skills: 
+          - Python
+          - Qt
+          - MySQL
+
+  education:
+    title: "Education :"
+
+    educations:
+      - school: Epitech
+        degree: Master's in Computer Science
+        location: Bordeaux, France
+        graduated_on: 2019
+        link: https://www.epitech.eu/
