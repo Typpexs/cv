@@ -140,6 +140,7 @@ home:
 formations:
   page_title: Formation dispensées
   title: Formations aux Data Scientists de Cdiscount
+  trainer: Formateur
   introduction_title: Introduction
   introduction_text: |
     En tant que **MLOps Engineer** chez Cdiscount, j'ai eu l'opportunité, avec mon équipe, 
@@ -181,3 +182,42 @@ formations:
   conclusion_text: |
     Grâce à ces formations, les data scientists de Cdiscount ont pu améliorer leurs compétences techniques et adopter des pratiques 
     de développement logiciel de haute qualité, leur permettant de travailler de manière plus efficace et de livrer des solutions robustes et bien documentées.
+
+tgi:
+  page_title: TGI - Text Generation Inference
+  title: Mise en place de TGI (Text Generation Inference) avec Hugging Face
+  introduction_title: Introduction
+  introduction_text: |
+    Chez Peaksys, nous avons implémenté une API pour la génération de texte en utilisant 
+    le framework [**Hugging Face**](https://huggingface.co/docs/text-generation-inference/index). Cette API permet de déployer et de gérer plusieurs modèles de langage (LLMs) 
+    open source, tels que **LLaMA3**, **Mixtral**, **Mistral**, et d'autres, afin de tester et d'évaluer leurs performances.
+  
+  gestion_modeles_title: Gestion des Modèles
+  gestion_modeles_text: |
+    Notre infrastructure permet de déployer plusieurs LLMs simultanément, en attribuant des ressources spécifiques 
+    à chacun d'eux. Chaque modèle peut être assigné à un ou plusieurs GPUs particulier avec une quantité définie de ressources, 
+    garantissant ainsi que les autres modèles ne peuvent pas utiliser les ressources allouées si elles ne sont pas disponibles.
+    
+    - **Modèles supportés** : LLaMA3, Mixtral, Mistral, et bien d'autres.
+    - **Gestion des ressources** : Attribution spécifique de GPU et de ressources en fonction des besoins de chaque modèle.
+  
+  ai_gateway_title: AI Gateway
+  ai_gateway_text: |
+    Nous avons mis en place une **AI Gateway** pour gérer les quotas et l'utilisation de chaque LLM/GPU en fonction des projets, 
+    jobs, chats, utilisateurs, etc. Cette passerelle gère également la sécurité, l'authentification, et le monitoring. 
+    Tout cela est en constante amélioration pour répondre aux besoins changeants de notre infrastructure.
+
+  technologies_title: Technologies Utilisées
+  technologies_text: |
+    Pour orchestrer et gérer notre infrastructure, nous utilisons les technologies suivantes :
+    
+    - **Kubernetes (K8s)** : Orchestration des conteneurs pour déployer et gérer les modèles à grande échelle.
+    - **Helm** : Gestionnaire de packages pour Kubernetes, facilitant le déploiement et la gestion des applications.
+    - **Azure DevOps** : Plateforme de CI/CD pour automatiser les déploiements et gérer le cycle de vie des applications.
+
+  conclusion_title: Conclusion
+  conclusion_text: |
+    Grâce à cette infrastructure, CDiscount et ses filiales peuvent utiliser ces LLMs de manière simple et efficace, avec une 
+    documentation complète pour les guider. Cette solution offre des performances optimales et une gestion simplifiée des ressources, 
+    permettant ainsi à nos équipes de se concentrer sur le développement et l'amélioration de leurs projets tout en bénéficiant de 
+    modèles de langage performants et bien gérés.

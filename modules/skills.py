@@ -38,7 +38,7 @@ def display_additional_skills() -> None:
 
     columns_3 = st.columns(5)
     image_data_3 = [
-        ImageData(columns_3[0], FORMATEUR_LOGO, "Formateur", CUSTOM_COLUMN_5,  {"width": 50}),
+        ImageData(columns_3[0], FORMATEUR_LOGO, translator.get_translation("formations.trainer"), CUSTOM_COLUMN_5,  {"width": 50}),
         ImageData(columns_3[1], HELM_LOGO, "Helm", CUSTOM_COLUMN_5),
         ImageData(columns_3[2], JUPYTER_LOGO, "Jupyterhub", CUSTOM_COLUMN_5, {"width": 50}),
         ImageData(columns_3[3], STREAMLIT_LOGO, "Streamlit", CUSTOM_COLUMN_5, {"width": 50}),

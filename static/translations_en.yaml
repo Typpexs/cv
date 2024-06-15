@@ -139,6 +139,7 @@ home:
 formations:
   page_title: Training Provided
   title: Training for Cdiscount Data Scientists
+  trainer: Trainer
   introduction_title: Introduction
   introduction_text: |
     As an **MLOps Engineer** at Cdiscount, I had the opportunity, along with my team, 
@@ -180,3 +181,41 @@ formations:
   conclusion_text: |
     Thanks to these training sessions, Cdiscount's data scientists were able to improve their technical skills and adopt high-quality 
     software development practices, enabling them to work more efficiently and deliver robust, well-documented solutions.
+
+tgi:
+  page_title: TGI - Text Generation Inference
+  title: Implementation of TGI (Text Generation Inference) with Hugging Face
+  introduction_title: Introduction
+  introduction_text: |
+    At Peaksys, we have implemented an API for text generation using 
+    the [**Hugging Face**](https://huggingface.co/docs/text-generation-inference/index) framework. This API allows deploying and managing multiple open source language models (LLMs) 
+    such as **LLaMA3**, **Mixtral**, **Mistral**, and others, to test and evaluate their performance.
+  
+  gestion_modeles_title: Model Management
+  gestion_modeles_text: |
+    Our infrastructure allows deploying multiple LLMs simultaneously, assigning specific resources 
+    to each. Each model can be assigned to one or more specific GPUs with a defined amount of resources, 
+    ensuring that other models cannot use the allocated resources if they are not available.
+    
+    - **Supported models**: LLaMA3, Mixtral, Mistral, and many others.
+    - **Resource management**: Specific assignment of GPU and resources based on the needs of each model.
+  
+  ai_gateway_title: AI Gateway
+  ai_gateway_text: |
+    We have implemented an **AI Gateway** to manage the quotas and usage of each LLM/GPU based on projects, 
+    jobs, chats, users, etc. This gateway also handles security, authentication, and monitoring. 
+    All of this is constantly being improved to meet the changing needs of our infrastructure.
+
+  technologies_title: Technologies Used
+  technologies_text: |
+    To orchestrate and manage our infrastructure, we use the following technologies:
+    
+    - **Kubernetes (K8s)**: Container orchestration to deploy and manage models at scale.
+    - **Helm**: Package manager for Kubernetes, facilitating the deployment and management of applications.
+    - **Azure DevOps**: CI/CD platform to automate deployments and manage the application lifecycle.
+
+  conclusion_title: Conclusion
+  conclusion_text: |
+    Thanks to this infrastructure, CDiscount and its subsidiaries can use these LLMs in a simple and efficient way, with comprehensive 
+    documentation to guide them. This solution offers optimal performance and simplified resource management, 
+    allowing our teams to focus on developing and improving their projects while benefiting from well-managed, high-performance language models.

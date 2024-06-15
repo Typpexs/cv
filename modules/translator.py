@@ -61,4 +61,4 @@ def set_lang() -> None:
         st.session_state["lang"] = "FR"
 
     #TODO: Change le label du toggle pour mettre un drapeau
-    st.toggle(label="EN", value=st.session_state["EN"], on_change=change_lang)
+    st.toggle(label=":flag-gb:", value=st.session_state["EN"], on_change=change_lang)
