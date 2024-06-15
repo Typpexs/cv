@@ -1,6 +1,6 @@
 home: 
   home: Accueil
-  welcome: Bienvenue sur mon portfolio professionnel ! 👋
+  welcome: Bienvenue sur mon portfolio professionnel !
   about: |
       Je suis Martin Majo, **lead développeur**, **MLOps Engineer**.
 
@@ -15,7 +15,6 @@ home:
       <p style='font-size:12px'>
       Cette liste n'est pas exhaustive et ne reflète que les domaines où j'ai le plus d'affinités et d'expertise.
       </p>
-
 
   professional_experience:
     title: "Expériences professionnelles :"
@@ -137,3 +136,48 @@ home:
         school: DataScientest
         date: 2024
         link: https://files.datascientest.com/certification/e2de37f4-59bd-45f4-b50f-89444cfe74c3.pdf
+
+formations:
+  page_title: Formation dispensées
+  title: Formations aux Data Scientists de Cdiscount
+  introduction_title: Introduction
+  introduction_text: |
+    En tant que **MLOps Engineer** chez Cdiscount, j'ai eu l'opportunité, avec mon équipe, 
+    de donner des formations aux data scientists sur divers sujets techniques essentiels pour leur travail quotidien. 
+    Ces formations avaient pour but de les aider à mieux comprendre l'environnement dans lequel ils évoluent, 
+    à améliorer leurs compétences techniques et à adopter les meilleures pratiques en matière de développement logiciel.
+  
+  sujets_title: Sujets abordés
+  sujets_text: |
+    Nous avons couvert les sujets suivants lors de nos formations :
+
+    - **🔧 Git** : Explication des bases de Git, comment versionner leur code et collaborer efficacement.
+    - **🐳 Docker** : Introduction à Docker, comment containeriser leurs applications pour des déploiements reproductibles.
+    - **☸️ Kubernetes** : Présentation de Kubernetes, comment orchestrer leurs conteneurs à grande échelle.
+    - **🔧 Azure DevOps** : Utilisation d'Azure DevOps pour gérer leurs projets, leurs pipelines CI/CD et leurs artefacts.
+    - **📊 Monitoring et Logs** : Explication de l'importance du monitoring, comment récupérer et analyser les logs pour diagnostiquer les problèmes.
+  
+  objectifs_title: Objectifs des formations
+  objectifs_text: |
+    Les formations visaient à atteindre les objectifs suivants :
+    
+    - Comprendre l'environnement de travail.
+    - Déployer correctement leurs jobs et API.
+    - Versionner efficacement leur code.
+    - Adopter les bonnes pratiques de développement et de documentation.
+    - Apprendre les bases des tests unitaires et les intégrer dans un pipeline CI/CD.
+
+  pipeline_title: Mise en place d'un pipeline CI/CD
+  pipeline_text: |
+    Nous avons mis en place un pipeline de CI/CD pour leurs projets, 
+    avec des exigences minimales de couverture de tests unitaires pour éviter les dettes techniques.
+
+  support_title: Support continu
+  support_text: |
+    Notre équipe était également présente pour les aider à monter en compétence sur les librairies Python que nous avions développées. 
+    Nous étions disponibles pour du support en cas de problèmes, les aidant à résoudre les erreurs et à comprendre les messages d'erreur.
+
+  conclusion_title: Conclusion
+  conclusion_text: |
+    Grâce à ces formations, les data scientists de Cdiscount ont pu améliorer leurs compétences techniques et adopter des pratiques 
+    de développement logiciel de haute qualité, leur permettant de travailler de manière plus efficace et de livrer des solutions robustes et bien documentées.

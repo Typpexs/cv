@@ -49,3 +49,16 @@ class Translator:
         if isinstance(translation, str):
             return translation.format(**kwargs)
         return translation
+    
+
+def change_lang() -> None:
+    st.session_state["EN"] = not st.session_state["EN"]
+    st.session_state["lang"] = "EN" if st.session_state["EN"] else "FR"
+
+def set_lang() -> None:
+    if "EN" not in st.session_state:
+        st.session_state["EN"] = False
+        st.session_state["lang"] = "FR"
+
+    #TODO: Change le label du toggle pour mettre un drapeau
+    st.toggle(label="EN", value=st.session_state["EN"], on_change=change_lang)

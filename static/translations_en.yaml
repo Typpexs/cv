@@ -1,6 +1,6 @@
 home: 
   home: Home
-  welcome: Welcome to my professional portfolio! 👋
+  welcome: Welcome to my professional portfolio!
   about: |
     I am Martin Majo, **lead developer**, **MLOps Engineer**.
 
@@ -135,3 +135,48 @@ home:
         school: DataScientest
         date: 2024
         link: https://files.datascientest.com/certification/e2de37f4-59bd-45f4-b50f-89444cfe74c3.pdf
+
+formations:
+  page_title: Training Provided
+  title: Training for Cdiscount Data Scientists
+  introduction_title: Introduction
+  introduction_text: |
+    As an **MLOps Engineer** at Cdiscount, I had the opportunity, along with my team, 
+    to provide training to data scientists on various key technical topics essential for their daily work. 
+    These training sessions aimed to help them better understand the environment in which they operate, 
+    improve their technical skills, and adopt best practices in software development.
+
+  sujets_title: Topics Covered
+  sujets_text: |
+    We covered the following topics during our training sessions:
+
+    - **🔧 Git**: Explanation of Git basics, how to version their code, and collaborate effectively.
+    - **🐳 Docker**: Introduction to Docker, how to containerize their applications for reproducible deployments.
+    - **☸️ Kubernetes**: Overview of Kubernetes, how to orchestrate their containers at scale.
+    - **🔧 Azure DevOps**: Using Azure DevOps to manage their projects, CI/CD pipelines, and artifacts.
+    - **📊 Monitoring and Logs**: Explanation of the importance of monitoring, how to retrieve and analyze logs to diagnose issues.
+
+  objectifs_title: Training Objectives
+  objectifs_text: |
+    The training sessions aimed to achieve the following objectives:
+    
+    - Understand the working environment.
+    - Properly deploy their jobs and APIs.
+    - Effectively version their code.
+    - Adopt best practices in development and documentation.
+    - Learn the basics of unit testing and integrate them into a CI/CD pipeline.
+
+  pipeline_title: CI/CD Pipeline Implementation
+  pipeline_text: |
+    We implemented a CI/CD pipeline for their projects, 
+    with minimum requirements for unit test coverage to avoid technical debt.
+
+  support_title: Continuous Support
+  support_text: |
+    Our team was also present to help them improve their skills on the Python libraries we developed. 
+    We were available for support in case of problems, helping them resolve errors and understand error messages.
+
+  conclusion_title: Conclusion
+  conclusion_text: |
+    Thanks to these training sessions, Cdiscount's data scientists were able to improve their technical skills and adopt high-quality 
+    software development practices, enabling them to work more efficiently and deliver robust, well-documented solutions.
