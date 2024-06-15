@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 @dataclass
 class Certification:
-    titre: str
-    ecole: str
+    title: str
+    school: str
     date: str
     link: str

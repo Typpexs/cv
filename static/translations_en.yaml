@@ -111,3 +111,27 @@ home:
         location: Bordeaux, France
         graduated_on: 2019
         link: https://www.epitech.eu/
+
+  certification:
+    title: "Certifications :"
+
+    certifications:
+      - title: Regression with scikit-learn
+        school: DataScientest
+        date: 2024
+        link: https://files.datascientest.com/certification/0e65da50-fd3f-4000-844c-11ce2f3eeb40.pdf
+
+      - title: Clustering with scikit-learn
+        school: DataScientest
+        date: 2024
+        link: https://files.datascientest.com/certification/45bda0a7-51fc-4687-8df4-b0893ec1420c.pdf
+
+      - title: Classification with scikit-learn
+        school: DataScientest
+        date: 2024
+        link: https://files.datascientest.com/certification/e5e07605-8a1e-4d16-b5c8-e64e3d5f90f7.pdf
+
+      - title: Advanced Classification with scikit-learn
+        school: DataScientest
+        date: 2024
+        link: https://files.datascientest.com/certification/e2de37f4-59bd-45f4-b50f-89444cfe74c3.pdf

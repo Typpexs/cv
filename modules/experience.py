@@ -2,8 +2,8 @@ from dataclasses import dataclass
 
 @dataclass
 class Experience:
-    entreprise: str
-    poste: str
+    company: str
+    title: str
     date: str
     description: str
-    competences: str
+    skills: str

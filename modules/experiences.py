@@ -25,11 +25,11 @@ def get_experiences() -> list[Experience]:
 
     for exp in translator_experiences:
         experience = Experience(
-            entreprise=exp.get("company"),
-            poste=exp.get("title"),
+            company=exp.get("company"),
+            title=exp.get("title"),
             date=exp.get("date"),
             description=exp.get("description"),
-            competences=", ".join(exp.get("skills"))
+            skills=", ".join(exp.get("skills"))
         )
         experiences.append(experience)
 
@@ -57,10 +57,10 @@ def display_experiences() -> None:
     experiences[0].date = experiences[0].date.format(years=years, months=months)
 
     for experience in experiences:
-        st.header(f"{experience.poste}")
-        st.markdown(f"🏢 **{experience.entreprise}**")
+        st.header(f"{experience.title}")
+        st.markdown(f"🏢 **{experience.company}**")
         st.markdown(f"📅 {experience.date}")
         st.markdown(f"📝**{translator.get_translation('home.professional_experience.description')}**")
         st.markdown(format_description(experience.description), unsafe_allow_html=True)
-        st.markdown(f"🔧 {experience.competences}")
+        st.markdown(f"🔧 {experience.skills}")
         st.markdown("")

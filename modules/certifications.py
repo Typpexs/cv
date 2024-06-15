@@ -1,43 +1,39 @@
 import streamlit as st
 
 from modules.certification import Certification
+from modules.translator import Translator
+
+translator = Translator()
 
 
-regression = Certification(
-    titre="Regression with scikit-learn",
-    ecole="DataScientest",
-    date="2024",
-    link="https://files.datascientest.com/certification/0e65da50-fd3f-4000-844c-11ce2f3eeb40.pdf"
-)
+def get_certifications() -> list[Certification]:
+    """Set the certifications of the user
 
-clustering = Certification(
-    titre="Clustering with scikit-learn",
-    ecole="DataScientest",
-    date="2024",
-    link="https://files.datascientest.com/certification/45bda0a7-51fc-4687-8df4-b0893ec1420c.pdf"
-)
+    Returns:
+        list[Certification]: list of certifications
+    """
+    translator_certifications = translator.get_translation("home.certification.certifications")
 
-classification = Certification(
-    titre="Classification with scikit-learn",
-    ecole="DataScientest",
-    date="2024",
-    link="https://files.datascientest.com/certification/e5e07605-8a1e-4d16-b5c8-e64e3d5f90f7.pdf"
-)
+    certifications = list()
 
-advanced_classification = Certification(
-    titre="Advanced Classification with scikit-learn",
-    ecole="DataScientest",
-    date="2024",
-    link="https://files.datascientest.com/certification/e2de37f4-59bd-45f4-b50f-89444cfe74c3.pdf"
-)
+    for cert in translator_certifications:
+        certification = Certification(
+            title=cert.get("title"),
+            school=cert.get("school"),
+            date=cert.get("date"),
+            link=cert.get("link")
+        )
+        certifications.append(certification)
 
-certifications = [regression, clustering, classification, advanced_classification]
+    return certifications
 
 def display_certifications() -> None:
     """Display certifications in Streamlit columns.
     """
-    st.header("Certifications :")
+
+    st.header(translator.get_translation("home.certification.title"))
     st.text("\n")
 
+    certifications = get_certifications()
     for certification in certifications:
-        st.markdown(f"""[{certification.titre}]({certification.link}) - {certification.ecole} - {certification.date}""")
+        st.markdown(f"""[{certification.title}]({certification.link}) - {certification.school} - {certification.date}""")
