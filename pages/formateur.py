@@ -11,7 +11,6 @@ def main():
     
     st.title(translator.get_translation("formations.title"))
     
-    st.header(translator.get_translation("formations.introduction_title"))
     st.markdown(translator.get_translation("formations.introduction_text"))
 
     st.header(translator.get_translation("formations.sujets_title"))
@@ -26,7 +25,7 @@ def main():
     st.header(translator.get_translation("formations.support_title"))
     st.markdown(translator.get_translation("formations.support_text"))
 
-    st.header(translator.get_translation("formations.conclusion_title"))
+    st.divider()
     st.markdown(translator.get_translation("formations.conclusion_text"))
 
 

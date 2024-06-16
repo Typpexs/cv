@@ -141,9 +141,8 @@ formations:
   page_title: Formation dispensées
   title: Formations aux Data Scientists de Cdiscount
   trainer: Formateur
-  introduction_title: Introduction
   introduction_text: |
-    En tant que **MLOps Engineer** chez Cdiscount, j'ai eu l'opportunité, avec mon équipe, 
+    En tant que **MLOps Engineer** chez Peaksys, j'ai eu l'opportunité, avec mon équipe, 
     de donner des formations aux data scientists sur divers sujets techniques essentiels pour leur travail quotidien. 
     Ces formations avaient pour but de les aider à mieux comprendre l'environnement dans lequel ils évoluent, 
     à améliorer leurs compétences techniques et à adopter les meilleures pratiques en matière de développement logiciel.
@@ -152,11 +151,11 @@ formations:
   sujets_text: |
     Nous avons couvert les sujets suivants lors de nos formations :
 
-    - **🔧 Git** : Explication des bases de Git, comment versionner leur code et collaborer efficacement.
-    - **🐳 Docker** : Introduction à Docker, comment containeriser leurs applications pour des déploiements reproductibles.
-    - **☸️ Kubernetes** : Présentation de Kubernetes, comment orchestrer leurs conteneurs à grande échelle.
-    - **🔧 Azure DevOps** : Utilisation d'Azure DevOps pour gérer leurs projets, leurs pipelines CI/CD et leurs artefacts.
-    - **📊 Monitoring et Logs** : Explication de l'importance du monitoring, comment récupérer et analyser les logs pour diagnostiquer les problèmes.
+    - **Git** : Explication des bases de Git, comment versionner leur code et collaborer efficacement.
+    - **Docker** : Introduction à Docker, comment containeriser leurs applications pour des déploiements reproductibles.
+    - **Kubernetes** : Présentation de Kubernetes, comment orchestrer leurs conteneurs à grande échelle.
+    - **Azure DevOps** : Utilisation d'Azure DevOps pour gérer leurs projets, leurs pipelines CI/CD et leurs artefacts.
+    - **Monitoring et Logs** : Explication de l'importance du monitoring, comment récupérer et analyser les logs pour diagnostiquer les problèmes.
   
   objectifs_title: Objectifs des formations
   objectifs_text: |
@@ -178,7 +177,6 @@ formations:
     Notre équipe était également présente pour les aider à monter en compétence sur les librairies Python que nous avions développées. 
     Nous étions disponibles pour du support en cas de problèmes, les aidant à résoudre les erreurs et à comprendre les messages d'erreur.
 
-  conclusion_title: Conclusion
   conclusion_text: |
     Grâce à ces formations, les data scientists de Cdiscount ont pu améliorer leurs compétences techniques et adopter des pratiques 
     de développement logiciel de haute qualité, leur permettant de travailler de manière plus efficace et de livrer des solutions robustes et bien documentées.
@@ -186,7 +184,6 @@ formations:
 tgi:
   page_title: TGI - Text Generation Inference
   title: Mise en place de TGI (Text Generation Inference) avec Hugging Face
-  introduction_title: Introduction
   introduction_text: |
     Chez Peaksys, nous avons implémenté une API pour la génération de texte en utilisant 
     le framework [**Hugging Face**](https://huggingface.co/docs/text-generation-inference/index). Cette API permet de déployer et de gérer plusieurs modèles de langage (LLMs) 
@@ -215,9 +212,157 @@ tgi:
     - **Helm** : Gestionnaire de packages pour Kubernetes, facilitant le déploiement et la gestion des applications.
     - **Azure DevOps** : Plateforme de CI/CD pour automatiser les déploiements et gérer le cycle de vie des applications.
 
-  conclusion_title: Conclusion
   conclusion_text: |
     Grâce à cette infrastructure, CDiscount et ses filiales peuvent utiliser ces LLMs de manière simple et efficace, avec une 
     documentation complète pour les guider. Cette solution offre des performances optimales et une gestion simplifiée des ressources, 
     permettant ainsi à nos équipes de se concentrer sur le développement et l'amélioration de leurs projets tout en bénéficiant de 
     modèles de langage performants et bien gérés.
+
+jupyterhub:
+  page_title: JupyterHub
+  title: Déploiement de JupyterHub
+  introduction_text: |
+    Nous avons mis en place [**JupyterHub**](https://jupyter.org/hub) sur notre cluster Kubernetes pour offrir un environnement de développement flexible et puissant à nos utilisateurs. 
+    Ce déploiement permet à nos data scientists et développeurs de travailler efficacement avec des ressources adaptées à leurs besoins spécifiques.
+
+  mise_en_place_title: Mise en place de JupyterHub
+  mise_en_place_text: |
+    La mise en place de **JupyterHub** sur notre infrastructure a impliqué plusieurs étapes cruciales :
+    
+    - **Création des ingress** : Configuration des points d'entrée pour gérer le trafic vers les différentes instances de JupyterHub.
+    - **Configuration des utilisateurs** : Gestion des accès et des permissions pour différents utilisateurs.
+    - **Ajout d'un plugin d'authentification pour l'OIDC interne** : Implémentation d'un plugin pour l'authentification sécurisée via notre fournisseur OIDC interne.
+    - **Déploiement d'un proxy Traefik** : Utilisation de Traefik, recommandé par la documentation de JupyterHub, pour gérer les routes et renforcer la sécurité.
+
+  creation_images_title: Création d'Images Docker Personnalisées
+  creation_images_text: |
+    Nous avons créé des images Docker personnalisées pour les serveurs Jupyter afin de répondre aux divers besoins de nos utilisateurs :
+    
+    - **Choix de ressources** : Les utilisateurs peuvent sélectionner des configurations spécifiques de GPU, CPU et RAM.
+    - **Gestion automatique des ressources** : Les serveurs utilisant des ressources intensives s'auto-éteignent rapidement pour éviter de monopoliser les ressources.
+    - **Choix de la version de Python** : Possibilité de choisir différentes versions de Python pour les environnements de développement.
+    - **Images avec drivers GPU** : Disponibilité d'images incluant les drivers nécessaires pour GPU (CUDA, cuDNN).
+    - **Page admin pour serveurs personnalisés** : Création d'une interface administrative permettant de configurer des serveurs sur mesure avec des ressources supplémentaires pour des utilisateurs spécifiques sur une durée limitée.
+    - **Optimisation des images** : Réduction de la taille des images Docker en minimisant les dépendances inutiles.
+
+  gestion_stockage_title: Gestion du Stockage Local
+  gestion_stockage_text: |
+    Chaque serveur Jupyter est associé à un stockage local restreint :
+    
+    - **Limitation du stockage** : Chaque serveur dispose d'un stockage local de 20GO maximum sur un Persistent Volume Claim (PVC).
+    - **Écriture en RAM** : Les utilisateurs peuvent écrire en RAM plutôt que sur disque pour des performances optimales, particulièrement avantageux pour le chargement de modèles.
+
+  maintenance_title: Maintenance Continue et Veille Technologique
+  maintenance_text: |
+    Nous assurons une mise à jour régulière des images de serveurs Jupyter ainsi que de JupyterHub et JupyterLab. 
+    Avec l'avancée rapide et l'utilisation croissante de l'IA générative, il est crucial de rester à jour avec les dernières technologies et pratiques.
+
+  conclusion_text: |
+    En déployant JupyterHub sur notre cluster Kubernetes, nous avons réussi à offrir une solution robuste et flexible 
+    à nos utilisateurs, leur permettant de bénéficier d'un environnement de développement sur mesure. 
+    Grâce à une gestion fine des ressources et à une infrastructure évolutive, nos équipes peuvent se concentrer sur 
+    l'innovation et l'optimisation de leurs projets, tout en profitant des dernières avancées technologiques.
+    
+    Notre engagement à maintenir cette infrastructure à jour garantit que nous restons à la pointe de la technologie 
+    et que nous répondons efficacement aux besoins changeants de nos utilisateurs.
+
+mlflow:
+  page_title: MLflow
+  title: Déploiement de MLflow chez Peaksys
+  introduction_title: Introduction à MLflow
+  introduction_text: |
+    [**MLflow**](https://mlflow.org/) est une plateforme open source conçue pour gérer l'ensemble du cycle de vie des modèles de machine learning. 
+    Il comprend plusieurs composants clés, notamment :
+    
+    - **Model Registry** : Permet de gérer et de versionner les modèles de machine learning.
+    - **Versionning de Modèle** : Suivi des différentes versions des modèles pour une meilleure gestion des déploiements.
+    - **Tracking des Modèles** : Enregistrement des paramètres, des métriques et des artefacts des expériences de machine learning.
+
+    Chez Peaksys, nous avons déployé MLflow pour centraliser et optimiser la gestion de nos modèles de machine learning.
+
+  deployment_title: Déploiement de MLflow
+  deployment_text: |
+    Le déploiement de MLflow chez Peaksys a impliqué plusieurs étapes cruciales :
+
+    - **Déploiement d'un reverse proxy** : Utilisation de **oauth2_proxy** pour gérer l'authentification et la sécurité des accès à MLflow.
+    - **Création des ingress** : Configuration des points d'entrée pour diriger le trafic vers le service MLflow.
+    - **Création de plugins pour MLflow** : Développement de plugins personnalisés pour améliorer les fonctionnalités de MLflow.
+        - **Authentification** : Plugin pour gérer l'authentification des utilisateurs.
+        - **Gestion des versions de modèles** : Limitation du nombre maximum de versions de modèles pour éviter l'encombrement. Les versions les plus anciennes sont automatiquement supprimées lorsque la limite est atteinte, sauf pour certains modèles qui bénéficient d'exceptions.
+        - **Optimisation des ressources** : Utilisation de la RAM pour le stockage temporaire lors de l'envoi des modèles, afin de minimiser l'usage du stockage local.
+
+  library_title: Librairie Python pour Data Scientists
+  library_text: |
+    Pour simplifier l'utilisation de MLflow par nos data scientists, nous avons développé une librairie Python surcouche de la librairie MLflow. 
+    Cette librairie facilite l'intégration de MLflow dans leurs workflows quotidiens, en offrant des fonctionnalités supplémentaires et des abstractions 
+    pour une utilisation plus intuitive et efficace.
+
+  conclusion_text: |
+    Grâce à l'implémentation de MLflow chez Peaksys, nous avons pu améliorer significativement notre gestion des modèles de machine learning. 
+    Les fonctionnalités avancées et les plugins personnalisés que nous avons développés permettent une gestion efficace et sécurisée des modèles, 
+    tout en optimisant l'utilisation des ressources. Nos data scientists peuvent désormais se concentrer sur l'expérimentation et l'innovation, 
+    en s'appuyant sur une infrastructure solide et fiable.
+
+argo:
+  page_title: Argo Workflows
+  title: Déploiement d'Argo Workflows
+  introduction_title: Introduction à Argo Workflows
+  introduction_text: |
+    [**Argo Workflows**](https://argoproj.github.io/workflows/) est un outil open-source de gestion de workflows conçu pour orchestrer les tâches sur Kubernetes. 
+    Il permet de définir, planifier et gérer des workflows complexes de manière efficace et évolutive. 
+    Chez Peaksys, nous avons déployé Argo Workflows en production et sur tous nos environnements de développement pour optimiser la gestion de nos jobs.
+
+  pipeline_title: "Pipeline as Code"
+  pipeline_text: |
+    Pour automatiser le déploiement des jobs Argo, nous avons créé un pipeline as code :
+    
+    - **Déploiement automatique des jobs** : Utilisation d'un pipeline as code pour générer et déployer automatiquement les manifestes YAML nécessaires aux jobs Argo.
+    - **Création des manifestes YAML** : Le pipeline génère les fichiers de configuration YAML, éliminant ainsi les erreurs humaines et accélérant le processus de déploiement.
+
+  orchestration_title: "Orchestration Efficace des Jobs"
+  orchestration_text: |
+    Argo Workflows permet une orchestration efficace des jobs, tant horizontalement que verticalement :
+    
+    - **Orchestration horizontale et verticale** : Possibilité de scinder les gros jobs en plusieurs petits jobs, 
+      permettant une gestion plus fine des ressources et une meilleure performance globale.
+    - **Gestion optimisée des ressources** : En répartissant les tâches de manière équilibrée, nous pouvons utiliser nos ressources de manière plus efficace et éviter les bottlenecks.
+
+  conclusion_text: |
+    Grâce à l'implémentation d'Argo Workflows chez Peaksys, nous avons pu améliorer significativement notre gestion des jobs. 
+    L'automatisation via un pipeline as code et l'orchestration optimisée des ressources nous permettent de gérer nos workflows 
+    de manière plus efficace et robuste, tout en assurant une performance optimale.
+
+tools:
+  page_title: Images & Libs Python
+  title: Outils Docker et Librairies Python
+  docker_header: Images Docker Python
+  docker_text: |
+    Chez Peaksys, nous avons développé et maintenons des images Docker pour différentes versions de Python afin de répondre aux besoins variés de nos projets. 
+    Nous gérons jusqu'à quatre versions de Python, de la plus récente à n-3, tout en dépréciant les versions plus anciennes.
+    
+    - **Versions de Python** : Chaque version de Python est disponible en plusieurs tailles de Debian (slim, alpine, buster, stretch, etc.) en fonction des besoins spécifiques. 
+    Cependant, nous nous concentrons de plus en plus sur la réduction de ces variations pour simplifier la gestion.
+    
+    - **Optimisation des images Docker** : Nous appliquons plusieurs techniques pour optimiser nos images Docker :
+        - **Multi-stage build** : Construction multi-étape pour réduire la taille des images.
+        - **Optimisation du local storage** : Gestion efficace du stockage local pour minimiser l'utilisation de l'espace disque.
+        - **Création des environnements et volumes** : Mise en place des environnements et volumes nécessaires pour notre cluster Kubernetes.
+        - **Optimisation pour les librairies de datascience** : Ajustements spécifiques pour les bibliothèques de datascience Python afin d'améliorer les performances.
+
+  libraries_header: Librairies Python
+  libraries_text: |
+    Nous avons également créé et maintenons plusieurs librairies Python spécifiques à la datascience. Ces librairies permettent à nos data scientists 
+    de travailler de manière plus efficace, rapide, sécurisée et propre. Voici quelques-unes de nos contributions majeures :
+    
+    - **Surcouches de bibliothèques existantes** : Nous avons développé des surcouches pour des bibliothèques populaires comme Luigi, MLflow, et Snowflake pour simplifier leur utilisation.
+    - **Librairie de monitoring de KPI en temps réel** : Intégration avec Kafka pour surveiller les indicateurs de performance en temps réel.
+    - **Librairie de sécurité** : Gestion des appels sécurisés en machine-to-machine (M2M) ou human-to-machine (H2M) avec notre OIDC interne.
+    - **Librairie pour les tests unitaires** : Outils pour faciliter la création de tests unitaires, Gherkin, et Wiremock.
+    
+    Ces librairies sont conçues pour aider nos data scientists à écrire du code plus lisible, maintenable et évolutif, leur permettant de se concentrer sur l'innovation et la réalisation de projets ambitieux.
+
+  conclusion_text: |
+    L'objectif est de fournir des outils de haute qualité qui optimisent la productivité et l'efficacité des équipes. 
+    Les images Docker et librairies Python jouent un rôle crucial dans l'infrastructure, soutenant une mission d'innovation continue et de livraison de solutions de data science de pointe.
+    
+    Une veille technique continue est effectuée pour rester à la pointe des nouveautés et des meilleures pratiques, garantissant ainsi que les outils et processus évoluent avec les avancées technologiques.
