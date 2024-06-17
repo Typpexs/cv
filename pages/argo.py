@@ -13,7 +13,6 @@ def main():
 
     st.markdown(translator.get_translation("argo.introduction_text"))
 
-    #TODO : CHECK SI C'EST BIEN CA
     st.header(translator.get_translation("argo.pipeline_title"))
     st.markdown(translator.get_translation("argo.pipeline_text"))
 

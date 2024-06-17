@@ -31,6 +31,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# TODO: Peut etre regarder ça pour plus tard
-# st.sidebar.header("Plotting Demo")

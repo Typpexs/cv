@@ -29,7 +29,3 @@ def display_images_with_captions(image_data: list[ImageData]) -> None:
     for data in image_data:
         data.column.image(data.image, caption=data.caption, **(data.kwargs or {}))
         data.column.markdown(data.custom_column, unsafe_allow_html=True)
-
-
-
-    

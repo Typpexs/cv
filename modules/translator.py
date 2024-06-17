@@ -21,9 +21,9 @@ class Translator:
     def _load_translations(self) -> None:
         """Load translations from YAML files.
         """
-        with open('./static/translations_fr.yaml', 'r', encoding='utf-8') as file:
+        with open('./translations/translations_fr.yaml', 'r', encoding='utf-8') as file:
             self.translations['FR'] = yaml.safe_load(file)
-        with open('./static/translations_en.yaml', 'r', encoding='utf-8') as file:
+        with open('./translations/translations_en.yaml', 'r', encoding='utf-8') as file:
             self.translations['EN'] = yaml.safe_load(file)
 
     def get_translation(self, key: str, **kwargs: Any) -> str | dict:
@@ -60,5 +60,4 @@ def set_lang() -> None:
         st.session_state["EN"] = False
         st.session_state["lang"] = "FR"
 
-    #TODO: Change le label du toggle pour mettre un drapeau
     st.toggle(label="🌐 English", value=st.session_state["EN"], on_change=change_lang)

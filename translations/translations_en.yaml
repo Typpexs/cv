@@ -135,6 +135,9 @@ home:
         school: DataScientest
         date: 2024
         link: https://files.datascientest.com/certification/e2de37f4-59bd-45f4-b50f-89444cfe74c3.pdf
+  
+  navbar:
+    download: Download my CV
 
 formations:
   page_title: Training Provided
@@ -184,9 +187,9 @@ tgi:
   page_title: TGI - Text Generation Inference
   title: Implementation of TGI (Text Generation Inference) with Hugging Face
   introduction_text: |
-    At Peaksys, we have implemented an API for text generation using 
-    the [**Hugging Face**](https://huggingface.co/docs/text-generation-inference/index) framework. This API allows deploying and managing multiple open source language models (LLMs) 
-    such as **LLaMA3**, **Mixtral**, **Mistral**, and others, to test and evaluate their performance.
+    At Peaksys, we have implemented an API for text generation using the [**Hugging Face**](https://huggingface.co/docs/text-generation-inference/index) framework. 
+    We have also developed a pipeline as code to deploy and manage multiple open source language models (LLMs),
+    such as LLaMA3, Mixtral, Mistral, and others, to test and evaluate their performance.
   
   gestion_modeles_title: Model Management
   gestion_modeles_text: |
@@ -199,9 +202,10 @@ tgi:
   
   ai_gateway_title: AI Gateway
   ai_gateway_text: |
-    We have implemented an **AI Gateway** to manage the quotas and usage of each LLM/GPU based on projects, 
-    jobs, chats, users, etc. This gateway also handles security, authentication, and monitoring. 
-    All of this is constantly being improved to meet the changing needs of our infrastructure.
+    We have implemented an **AI Gateway** to manage quotas and the usage of each LLM/GPU according to projects,
+    jobs, chats, users, etc. This gateway also manages security, authentication, and monitoring.
+    This gateway is a single access point allowing access to all our deployed models, and we use Traefik Proxy as the gateway.
+    All of this is continuously improving to meet the changing needs of our infrastructure.
 
   technologies_title: Technologies Used
   technologies_text: |
@@ -312,10 +316,19 @@ argo:
 
   pipeline_title: "Pipeline as Code"
   pipeline_text: |
-    To automate the deployment of Argo jobs, we created a pipeline as code:
-    
-    - **Automatic job deployment**: Using a pipeline as code to automatically generate and deploy the necessary YAML manifests for Argo jobs.
-    - **Creation of YAML manifests**: The pipeline generates the YAML configuration files, eliminating human errors and speeding up the deployment process.
+    To facilitate the deployment of workflows on Kubernetes, we have implemented a pipeline as code. This pipeline allows for automated and efficient management of deployments.
+
+    - **Pipeline Steps**:
+      - **Manual Approval**: A validation step allowing the pipeline to be launched on the selected environment.
+      - **Initialization**: Retrieval and formatting of necessary information, including the configuration of jobs to be deployed and the Calico IP for the target Kubernetes environment.
+      - **Creation of Workflow Templates**: Generation of WorkflowTemplates manifests for each job to be deployed.
+      - **Workflow Deployment**: Creation and updating of workflow templates, followed by deployment on Kubernetes using `argo submit`.
+
+    - **Automation and Security**:
+      - **Retrieval of job information**: Cloning of the workflow configuration repository and execution of Python scripts to format the data.
+      - **Use of Helm**: Cloning and reformatting of Helm charts to create the necessary configuration templates.
+      - **Resource Management**: Allocation of necessary resources and creation of workflow template manifests for each job.
+      - **Secure Deployment**: Use of `argo template create` and `argo submit` to ensure secure and automated deployment of workflows.
 
   orchestration_title: "Efficient Job Orchestration"
   orchestration_text: |

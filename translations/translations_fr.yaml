@@ -57,7 +57,7 @@ home:
 
       - company: Thales
         title: Développeur logiciel
-        date: Août 2019 - Mars 2020 (8 mois)
+        date: mai 2019 - Mars 2020 (11 mois)
         description: |
           Création d'une plateforme permettant de gérer plusieurs bancs
           d'essais directement depuis son navigateur plutôt que de devoir rester dans la
@@ -137,6 +137,9 @@ home:
         date: 2024
         link: https://files.datascientest.com/certification/e2de37f4-59bd-45f4-b50f-89444cfe74c3.pdf
 
+  navbar:
+    download: Télécharger mon CV
+
 formations:
   page_title: Formation dispensées
   title: Formations aux Data Scientists de Cdiscount
@@ -185,9 +188,9 @@ tgi:
   page_title: TGI - Text Generation Inference
   title: Mise en place de TGI (Text Generation Inference) avec Hugging Face
   introduction_text: |
-    Chez Peaksys, nous avons implémenté une API pour la génération de texte en utilisant 
-    le framework [**Hugging Face**](https://huggingface.co/docs/text-generation-inference/index). Cette API permet de déployer et de gérer plusieurs modèles de langage (LLMs) 
-    open source, tels que **LLaMA3**, **Mixtral**, **Mistral**, et d'autres, afin de tester et d'évaluer leurs performances.
+    Chez Peaksys, nous avons implémenté une API pour la génération de texte en utilisant le framework [**Hugging Face**](https://huggingface.co/docs/text-generation-inference/index). 
+    Nous avons également développé un pipeline as code pour déployer et gérer plusieurs modèles de langage (LLMs) open source,
+    tels que LLaMA3, Mixtral, Mistral, et d'autres, afin de tester et d'évaluer leurs performances.
   
   gestion_modeles_title: Gestion des Modèles
   gestion_modeles_text: |
@@ -200,8 +203,9 @@ tgi:
   
   ai_gateway_title: AI Gateway
   ai_gateway_text: |
-    Nous avons mis en place une **AI Gateway** pour gérer les quotas et l'utilisation de chaque LLM/GPU en fonction des projets, 
-    jobs, chats, utilisateurs, etc. Cette passerelle gère également la sécurité, l'authentification, et le monitoring. 
+    Nous avons mis en place une **AI Gateway** pour gérer les quotas et l'utilisation de chaque LLM/GPU en fonction des projets,
+    jobs, chats, utilisateurs, etc. Cette passerelle gère également la sécurité, l'authentification, et le monitoring.
+    Cette gateway est un point d'accès unique permettant d'accéder à tous nos modèles déployés, et nous utilisons Traefik Proxy comme passerelle.
     Tout cela est en constante amélioration pour répondre aux besoins changeants de notre infrastructure.
 
   technologies_title: Technologies Utilisées
@@ -314,10 +318,19 @@ argo:
 
   pipeline_title: "Pipeline as Code"
   pipeline_text: |
-    Pour automatiser le déploiement des jobs Argo, nous avons créé un pipeline as code :
-    
-    - **Déploiement automatique des jobs** : Utilisation d'un pipeline as code pour générer et déployer automatiquement les manifestes YAML nécessaires aux jobs Argo.
-    - **Création des manifestes YAML** : Le pipeline génère les fichiers de configuration YAML, éliminant ainsi les erreurs humaines et accélérant le processus de déploiement.
+    Afin de faciliter le déploiement de workflows sur Kubernetes, nous avons mis en place un pipeline as code. Ce pipeline permet de gérer les déploiements de manière automatisée et efficace.
+
+    - **Étapes du Pipeline** :
+      - **Approbation Manuelle** : Une étape de validation permettant de lancer le pipeline sur l'environnement sélectionné.
+      - **Initialisation** : Récupération et formatage des informations nécessaires, y compris la configuration des jobs à déployer et l'IP Calico pour l'environnement Kubernetes cible.
+      - **Création des Templates de Workflows** : Génération des manifests des WorkflowTemplates pour chaque job à déployer.
+      - **Déploiement du Workflow** : Création et mise à jour des templates de workflows, suivie du déploiement sur Kubernetes avec `argo submit`.
+
+    - **Automatisation et Sécurité** :
+      - **Récupération des informations des jobs** : Clonage du repository de configuration de workflow et exécution de scripts Python pour formater les données.
+      - **Utilisation de Helm** : Clonage et reformatage des charts Helm pour créer les templates de configuration nécessaires.
+      - **Gestion des Ressources** : Attribution des ressources nécessaires et création de manifests de workflow template pour chaque job.
+      - **Déploiement Sécurisé** : Utilisation de `argo template create` et `argo submit` pour assurer un déploiement sécurisé et automatisé des workflows.
 
   orchestration_title: "Orchestration Efficace des Jobs"
   orchestration_text: |

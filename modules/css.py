@@ -5,6 +5,15 @@ button[title="View fullscreen"]{
 </style>
 '''
 
+HIDE_STREAMLIT_STYLE = """
+<style>
+#MainMenu {visibility: hidden;}
+.stDeployButton {display:none;}
+footer {visibility: hidden;}
+</style>
+
+"""
+
 CUSTOM_COLUMN_4 = '''<style>
 
 [data-testid="column"] {

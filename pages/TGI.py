@@ -10,7 +10,7 @@ def main():
     default_init_page()
     
     st.title(translator.get_translation("tgi.title"))
-    # TODO : TGI c'est PAS UNE API MAIS UN TOOLKIT
+
     st.markdown(translator.get_translation("tgi.introduction_text"))
 
     st.header(translator.get_translation("tgi.gestion_modeles_title"))
@@ -19,7 +19,6 @@ def main():
     st.header(translator.get_translation("tgi.ai_gateway_title"))
     st.markdown(translator.get_translation("tgi.ai_gateway_text"))
 
-    # TODO : A CHECK
     st.header(translator.get_translation("tgi.technologies_title"))
     st.markdown(translator.get_translation("tgi.technologies_text"))
 
