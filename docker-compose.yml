@@ -1,4 +1,5 @@
-version: '3'
+name: martin-majo-cv
+
 services:
   app:
     build:
