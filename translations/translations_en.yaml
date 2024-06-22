@@ -40,7 +40,7 @@ home:
 
       - company: Journée de chasse
         title: Project Lead Developer
-        date: March 2020 - September 2021 (1 year and 6 months)
+        date: March 2020 - February 2022 (2 years)
         description: |
           Creation and management of a team (2 developers & 1 UI/UX). Creation of new
           features for the platform. Responsible for servers, platform optimization, and all
@@ -57,7 +57,7 @@ home:
 
       - company: Thales
         title: Software Developer
-        date: August 2019 - March 2020 (8 months)
+        date: May 2019 - March 2020 (11 months)
         description: |
           Creation of a platform to manage multiple test benches directly from a browser
           instead of having to stay in the test room.  
@@ -138,6 +138,7 @@ home:
   
   navbar:
     download: Download my CV
+    path_cv: ./static/CV_MARTIN_MAJO_EN.pdf
 
 formations:
   page_title: Training Provided
@@ -344,7 +345,7 @@ argo:
 
 tools:
   page_title: Images & Libs Python
-  title: Docker Tools and Python Libraries
+  title: Docker Images and Python Libraries
   docker_header: Python Docker Images
   docker_text: |
     At Peaksys, we have developed and maintain Docker images for various versions of Python to meet the diverse needs of our projects. 

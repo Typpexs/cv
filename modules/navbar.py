@@ -25,6 +25,6 @@ def navbar() -> None:
         col1.markdown("[![Malt.fr](app/static/malt_logo_25.png)](https://www.malt.fr/profile/martinmajo1)")
         col2.markdown("[![Linkedin](app/static/linkedin_logo_25.png)](https://www.linkedin.com/in/martin-majo-967083a3/)")
 
-        with open("./static/cv.pdf", "rb") as pdf_file:
+        with open(translator.get_translation("home.navbar.path_cv"), "rb") as pdf_file:
             PDFbyte = pdf_file.read()
         st.download_button(label=translator.get_translation("home.navbar.download"), data=PDFbyte, file_name="cv_martin_majo.pdf", mime='application/pdf')

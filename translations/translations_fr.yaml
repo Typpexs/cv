@@ -40,7 +40,7 @@ home:
 
       - company: Journée de chasse
         title: Project Lead Developer
-        date: Mars 2020 - Septembre 2021 (1 an et 6 mois)
+        date: Mars 2020 - Fevrier 2022 (2 ans)
         description: |
           Création et management d'une équipe (2 devs & 1 ui/ux). Création des nouvelles
           fonctionnalités de la platform. Être en charge des serveurs, de l'optimisation 
@@ -139,6 +139,7 @@ home:
 
   navbar:
     download: Télécharger mon CV
+    path_cv: ./static/CV_MARTIN_MAJO.pdf
 
 formations:
   page_title: Formation dispensées
@@ -347,7 +348,7 @@ argo:
 
 tools:
   page_title: Images & Libs Python
-  title: Outils Docker et Librairies Python
+  title: Images Docker et Librairies Python
   docker_header: Images Docker Python
   docker_text: |
     Chez Peaksys, nous avons développé et maintenons des images Docker pour différentes versions de Python afin de répondre aux besoins variés de nos projets. 
