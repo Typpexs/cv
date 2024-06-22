@@ -18,7 +18,7 @@ def navbar() -> None:
         set_lang()
 
         st.markdown("**👤 Martin Majo**")
-        st.markdown("**📧 : [martin.majo33@gmail.com](mailto:martin.majo33@egmail.com)**")
+        st.markdown("**📧 : [martin.majo33@gmail.com](mailto:martin.majo33@gmail.com)**")
         st.markdown("**📞: [+33 6.85.86.74.79](tel:+33685867479)**")
 
         col1, col2, _, _, _ = st.columns(5)
