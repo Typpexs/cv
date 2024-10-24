@@ -1,6 +1,7 @@
 FROM python:3.11
 
 WORKDIR /app
+ENV TMPDIR='/var/tmp'
 
 COPY requirements.txt .
 
